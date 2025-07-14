@@ -48,9 +48,17 @@ export default function Navigation({ activeSection, scrollToSection }) {
           </div>
 
           {/* Mobile menu button */}
-          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          <div className="md:hidden p-2 bg-white border-none shadow-none" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? (
+              <X size={22} className="text-green-600" />
+            ) : (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="5" width="24" height="2.5" rx="1" fill="#22c55e" />
+                <rect y="11" width="24" height="2.5" rx="1" fill="#22c55e" />
+                <rect y="17" width="24" height="2.5" rx="1" fill="#22c55e" />
+              </svg>
+            )}
+          </div>
         </div>
         {/* Animated gradient bar at bottom of navbar */}
         <div className="absolute left-0 right-0 bottom-0 h-1 overflow-hidden pointer-events-none">
